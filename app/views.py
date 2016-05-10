@@ -30,7 +30,7 @@ def profile2(request):
         json_data1 = json.loads(req1.text)
         for element in json_data1['elements']:
             parsedData.append({'name':element['name'],'slug':element['slug'],'photoUrl':element['photoUrl'],'id1':element['instructorIds'][0],'pid':element['partnerIds'][0]})
-        print(element['partnerIds'][0])
+        #print(element['partnerIds'][0])
             
 
     return render(request, 'app/profile2.html', {'data': parsedData})
@@ -44,7 +44,7 @@ def profile3(request):
        
     req2 = requests.get('https://api.coursera.org/api/instructors.v1/'+id1+'?includes=fullName,lastName&fields=fullName,lastName')
     json_data2 = json.loads(req2.text)
-    print json.dumps(json_data2, indent=4, sort_keys=True)
+    #print json.dumps(json_data2, indent=4, sort_keys=True)
 
     for element in json_data2['elements']:
         fullName = element['fullName']
@@ -52,12 +52,12 @@ def profile3(request):
 
     req2 = requests.get('https://api.coursera.org/api/partners.v1/'+pid+'?fields=name,logo&include=name,logo')
     json_data2 = json.loads(req2.text)
-    print json.dumps(json_data2, indent=4, sort_keys=True)
+    #print json.dumps(json_data2, indent=4, sort_keys=True)
 
     for element in json_data2['elements']:
         name = element['name']
         logo = element['logo']
 
     parsedData.append({'name':name,'logo':logo,'fullName':fullName}) 
-    print json.dumps(parsedData, indent=4, sort_keys=True)
+    #print json.dumps(parsedData, indent=4, sort_keys=True)
     return render(request, 'app/profile3.html', {'data': parsedData})
