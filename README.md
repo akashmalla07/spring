@@ -1,6 +1,6 @@
 # django-tutorial
 
-Django tutorial application built using Requests, Bower, Twitter Bootstrap and Github API
+Django Search Box using Coursera api and For the Search Box Please visit http://127.0.0.1:8000/app/profile
 
 # Installation
 
@@ -38,9 +38,11 @@ To run this project:
 
 You can now visit the following URLS:
 
+For the Search Box Please visit http://127.0.0.1:8000/app/profile/
 	* http://127.0.0.1:8000/app/
 	* http://127.0.0.1:8000/app/test/
 	* http://127.0.0.1:8000/app/profile/
+	* 
 
 # Tests
 
