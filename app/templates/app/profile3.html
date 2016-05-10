@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/static/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap-theme.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Coursera</a>
+        </div>
+
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+               <!-- <li class="{% block albums_active %}{% endblock %}"><a href="{#"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Albums</a></li>
+                <li class="{% block songs_active %}{% endblock %}"><a href="#"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp; Songs</a></li>
+            -->
+            </ul>
+            <!--<form class="navbar-form navbar-left" role="search" method="get" action="{#">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="q" value="{{ request.GET.q }}">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>-->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">
+                        <span aria-hidden="true"></span>&nbsp; Institutions
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span  aria-hidden="true"></span>&nbsp; Log In
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span aria-hidden="true" active="true"></span>&nbsp; Sign Up
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+    <div class="media">
+      {% for key in data %}
+        <div class="media-left">
+    
+           <a href="#">
+               <img class="media-object" src="{{ key.logo }}" alt="#" alt="Cinque Terre" width="200" height="150">
+           </a>
+        </div>
+        <div class="media-body">
+    
+             
+             <h4 class="media-heading">Instructor Name:{{ key.fullName}}</h4>
+             <h4 class="media-heading">Partner Name:{{ key.name}}</h4>
+           
+    
+        </div>
+    {% endfor %}
+    </div>
+
+<!--
+      <div class="table-responsive">
+          <table class="table table-bordered table-hover table-striped tablesorter">
+              <thead>
+              <tr>
+                <th class="header"> slug <i class="icon-sort"></i></th>
+                <th class="header"> name <i class="icon-sort"></i></th>
+                <th class="header"> Photo <i class="icon-sort"></i></th>
+                <th class="header"> FirstName <i class="icon-sort"></i></th>
+                <th class="header"> LastName <i class="icon-sort"></i></th>
+                <th class="header"> PartnerName <i class="icon-sort"></i></th>
+                <!--<th class="header"> Email <i class="icon-sort"></i></th>
+                <th class="header"> Followers <i class="icon-sort"></i></th>
+                <th class="header"> Following <i class="icon-sort"></i></th>
+              -->
+    <!--          </tr>
+          </thead>
+          <tbody>
+          
+          {% for key in data %}
+              <tr>
+                  <td>{{ key.slug }}</td>
+                  <td>{{ key.name }}</td>
+                  <!--<td> <img src="{{ key.photoUrl }}" class="img-responsive" style="width: 20px; float: left; margin-right: 10px;" /></td>
+                  -->
+        <!--          <td>{{ key.firstName }}</td>
+                  <td>{{ key.lastName }}</td>
+                  <td>{{ key.partnerName }}</td>
+                  <!--
+                  <td>{{ key.photoUrl }}</td>
+                  <!--<td>{{ key.email }}</td>
+                  <td>{{ key.followers }}</td>
+                  <td>{{ key.following }}</td>
+              -->
+            <!--  </tr>
+          {% endfor %}
+          
+          </tbody>
+          </table>
+      
+      </div>-->
+    </div>
+</body>
+</html>

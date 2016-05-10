@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/static/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap-theme.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Coursera</a>
+        </div>
+
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+               <!-- <li class="{% block albums_active %}{% endblock %}"><a href="{#"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Albums</a></li>
+                <li class="{% block songs_active %}{% endblock %}"><a href="#"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp; Songs</a></li>
+            -->
+            </ul>
+            <!--<form class="navbar-form navbar-left" role="search" method="get" action="{#">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="q" value="{{ request.GET.q }}">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>-->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">
+                        <span aria-hidden="true"></span>&nbsp; Institutions
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span  aria-hidden="true"></span>&nbsp; Log In
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span aria-hidden="true" active="true"></span>&nbsp; Sign Up
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<!--<h1 class="text-center"> Take the world's best courses, online. </h1>
+	-->
+  <div class="col-lg-12">
+      <style>
+        .form-signin {
+          max-width: 700px;
+          padding: 15px;
+          margin: 0 auto;
+          margin-top: 100px;
+        }   
+      </style>
+
+
+      <div class="container text-center">
+          <!--<form class="form-signin" id="login_form" method="post" action="/app/profile2/">
+            {% csrf_token %}
+            <h1 class="text-center"> Take the world's best courses, online.
+            <br>
+            <input type="text" name="user" class="form-control" placeholder="Search Any Topic" value="" required autofocus>
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Get Data</button>
+
+          </form>-->
+
+          <form class="form-signin" id="login_form" method="post" action="/app/profile2/">
+            {% csrf_token %}
+             <h1 class="text-center"> Take the world's best courses, online.
+            <br>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search Any Topic" name="user" id="srch-term">
+                  <div class="input-group-btn">
+                       <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>
+                       </button>
+                 </div>
+            </div>
+          </form>
+
+      </div>
+<!--
+      <div class="table-responsive">
+          <table class="table table-bordered table-hover table-striped tablesorter">
+              <thead>
+              <tr>
+                <th class="header"> slug <i class="icon-sort"></i></th>
+                <th class="header"> name <i class="icon-sort"></i></th>
+               <th class="header"> Public Repos <i class="icon-sort"></i></th>
+                <th class="header"> Public Gists <i class="icon-sort"></i></th>
+                <th class="header"> Email <i class="icon-sort"></i></th>
+                <th class="header"> Followers <i class="icon-sort"></i></th>
+                <th class="header"> Following <i class="icon-sort"></i></th>
+              </tr>
+          </thead>
+          <tbody>
+          
+          {% for key in data %}
+              <tr>
+                  <td>{{ key.title }}</td>
+                  <td>{{ key.name }}</td>
+                  <td>{{ key.public_repos }}</td>
+                  <td>{{ key.public_gists }}</td>
+                  <td>{{ key.email }}</td>
+                  <td>{{ key.followers }}</td>
+                  <td>{{ key.following }}</td>
+              </tr>
+          {% endfor %}
+          
+          </tbody>
+          </table>
+      </div>
+-->      
+    </div>
+</body>
+</html>
